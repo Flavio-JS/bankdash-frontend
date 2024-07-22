@@ -1,13 +1,15 @@
+import { InputIcon } from "@/components/InputIcon/InputIcon";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Input } from "@/components/ui/input";
 import { Menu } from "lucide-react";
 
 export const Header = () => {
+  const teste = "";
+
   return (
-    <div className="flex flex-col p-6 gap-5">
-      <div className="flex w-full justify-between items-center">
+    <div className="flex flex-col gap-5 p-6">
+      <div className="flex w-full items-center justify-between">
         <Menu />
-        <h1>Overview</h1>
+        <h1 className="text-xl font-semibold">Overview</h1>
         <Avatar>
           <AvatarImage
             src="https://github.com/Marcelol090.png"
@@ -17,7 +19,12 @@ export const Header = () => {
         </Avatar>
       </div>
       <div>
-        <Input type="text" placeholder="Search for something" />
+        <InputIcon
+          type="text"
+          placeholder="Search for something"
+          icon="Search"
+          iconPosition="left"
+        />
       </div>
     </div>
   );
