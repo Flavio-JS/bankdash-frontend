@@ -3,8 +3,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Menu } from "lucide-react";
 
 export const Header = () => {
-  const teste = "";
-
   return (
     <div className="flex flex-col gap-5 p-6">
       <div className="flex w-full items-center justify-between">
