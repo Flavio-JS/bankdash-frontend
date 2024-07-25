@@ -1,12 +1,12 @@
 import { InputIcon } from "@/components/InputIcon/InputIcon";
+import { SideBar } from "@/components/Sheet/Sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Menu } from "lucide-react";
 
 export const Header = () => {
   return (
     <div className="flex flex-col gap-5 p-6">
       <div className="flex w-full items-center justify-between">
-        <Menu />
+        <SideBar />
         <h1 className="text-xl font-semibold">Overview</h1>
         <Avatar>
           <AvatarImage
