@@ -93,7 +93,7 @@ export const SideBar = () => {
 export const SideBarMobile = () => {
   return (
     <>
-      <SheetHeader className="pl-6">
+      <SheetHeader className="flex flex-row items-center justify-start gap-2 pl-6">
         <Icons.BankDashMobileIcon />
         <SheetTitle>BankDash.</SheetTitle>
       </SheetHeader>
