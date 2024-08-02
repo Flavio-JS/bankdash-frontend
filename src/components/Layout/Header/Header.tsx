@@ -4,7 +4,7 @@ import { BellDot, Settings } from "lucide-react";
 
 export const Header = () => {
   return (
-    <div className="flex justify-between gap-7 p-6">
+    <div className="flex justify-between gap-7 p-5">
       <div className="flex items-center">
         <h1 className="text-3xl font-bold text-[#343C6A]">Overview</h1>
       </div>
