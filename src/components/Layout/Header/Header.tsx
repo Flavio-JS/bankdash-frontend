@@ -63,7 +63,7 @@ export const Header = () => {
         </div>
       </div>
       <InputIcon
-        className="lg:hiden flex w-full"
+        className="flex w-full lg:hidden"
         icon="Search"
         iconPosition="left"
         iconColor="#718EBF"
