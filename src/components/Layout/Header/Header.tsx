@@ -29,14 +29,16 @@ export const Header = () => {
   const title = titleKey ? pathToTitleMap[titleKey] : "";
 
   return (
-    <div className="flex flex-col gap-7 p-5">
+    <div className="flex flex-col gap-5 p-5 lg:gap-7">
       <div className="flex justify-between gap-7">
         <div className="flex h-full items-center lg:hidden">
           <SideBarMenu />
         </div>
 
         <div className="flex items-center">
-          <h1 className="text-3xl font-bold text-[#343C6A]">{title}</h1>
+          <h1 className="text-xl font-bold text-[#343C6A] lg:text-3xl">
+            {title}
+          </h1>
         </div>
         <div className="flex items-center gap-7">
           <InputIcon
@@ -54,7 +56,7 @@ export const Header = () => {
           <div className="hidden rounded-full bg-[#F5F7FA] p-3 hover:cursor-pointer lg:block">
             <BellDot color="#FE5C73" />
           </div>
-          <Avatar className="h-16 w-16">
+          <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>MA</AvatarFallback>
           </Avatar>
