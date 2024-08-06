@@ -72,7 +72,7 @@ export const SideBar = () => {
     <aside className="hidden w-[230px] border-r lg:flex lg:flex-col">
       <div className="flex h-[104px] items-center gap-2 p-8">
         <Icons.BankDashIcon />
-        <span className="text-2xl font-bold">BankDash.</span>
+        <span className="text-2xl font-bold text-[#343C6A]">BankDash.</span>
       </div>
       <nav>
         <ul className="p-8 pl-0">
