@@ -1,7 +1,7 @@
 "use client";
 
-import { InputIcon } from "@/components/InputIcon/InputIcon";
-import { SideBarMenu } from "@/components/SideBarMenu/SideBarMenu";
+import { InputIcon } from "@/features/dashboard/components/InputIcon/InputIcon";
+import { SideBarMenu } from "@/features/dashboard/components/SideBarMenu/SideBarMenu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BellDot, Settings } from "lucide-react";
 import Link from "next/link";

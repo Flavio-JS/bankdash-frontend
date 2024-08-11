@@ -1,7 +1,7 @@
 import {
   CreditCardComponent,
   type CreditCardComponentProps,
-} from "@/components/CreditCardComponent/CreditCardComponent";
+} from "@/features/dashboard/components/CreditCardComponent/CreditCardComponent";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Link from "next/link";
 
