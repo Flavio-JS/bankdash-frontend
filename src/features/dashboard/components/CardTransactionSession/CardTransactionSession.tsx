@@ -1,7 +1,7 @@
 import {
   CardTransaction,
   type CardTransactionProps,
-} from "@/components/CardTransaction/CardTransaction";
+} from "@/features/dashboard/components/CardTransaction/CardTransaction";
 
 const transactions: CardTransactionProps[] = [
   {

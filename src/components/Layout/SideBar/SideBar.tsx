@@ -1,6 +1,6 @@
 "use client";
 
-import { Icons } from "@/components/Icons/Icons";
+import { Icons } from "@/features/dashboard/components/Icons/Icons";
 import { SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

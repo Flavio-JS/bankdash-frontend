@@ -1,4 +1,4 @@
-import { Icons } from "@/components/Icons/Icons";
+import { Icons } from "@/features/dashboard/components/Icons/Icons";
 import { cn } from "@/lib/utils";
 
 const CardIcons = {
