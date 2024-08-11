@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BankDash
 
-## Getting Started
+## Projeto de Portfólio
 
-First, run the development server:
+O BankDash é um projeto de frontend estático criado para demonstrar minhas habilidades em desenvolvimento web. O objetivo é criar um dashboard que permita aos usuários visualizar e editar suas informações, exibir gráficos com resumos, previsões e históricos, e gerenciar seus investimentos e transações.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Visualização e edição de informações do usuário
+- Exibição de gráficos com resumos, previsões e históricos
+- Gerenciamento de investimentos e transações recentes
+- Criação e edição de cartões
+- Edição de informações do perfil
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologias e Linguagens
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Recharts
 
-## Learn More
+## Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+- O projeto é dividido em componentes reutilizáveis, permitindo fácil manutenção e atualização.
+- A estrutura de pastas é organizada de forma lógica, com cada pasta contendo arquivos relacionados a uma funcionalidade específica.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instalação e Execução
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Para executar o projeto, siga os passos abaixo:
 
-## Deploy on Vercel
+1. Clone o repositório.
+2. Execute o comando `npm install`.
+3. Em seguida, execute `npm run dev`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O projeto será executado em modo de desenvolvimento, permitindo que você visualize e interaja com o dashboard.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Observações
+
+- O projeto é apenas um exemplo de frontend estático e não inclui funcionalidades de backend ou banco de dados.
+- O objetivo é demonstrar minhas habilidades em desenvolvimento web e não criar um produto final.
