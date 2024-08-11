@@ -13,7 +13,9 @@ export const Layout = ({ children }: LayoutProps) => {
         <SideBar />
         <div className="flex max-h-dvh w-full flex-col">
           <Header />
-          <div className="h-full overflow-y-scroll">{children}</div>
+          <div className="flex h-full flex-col overflow-y-scroll bg-[#F5F7FA] lg:max-w-[calc(100vw-230px)]">
+            {children}
+          </div>
         </div>
       </div>
     </div>

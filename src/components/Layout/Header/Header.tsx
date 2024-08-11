@@ -49,7 +49,7 @@ export const Header = () => {
             placeholder="Search for something"
           />
           <div className="hidden rounded-full bg-[#F5F7FA] p-3 hover:cursor-pointer lg:block">
-            <Link href="/settings">
+            <Link href="/settings" aria-label="Settings">
               <Settings color="#718EBF" />
             </Link>
           </div>
@@ -57,8 +57,11 @@ export const Header = () => {
             <BellDot color="#FE5C73" />
           </div>
           <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>MA</AvatarFallback>
+            <AvatarImage
+              src="https://avatars.githubusercontent.com/u/106037619?v=4"
+              alt="avatar image"
+            />
+            <AvatarFallback>FJ</AvatarFallback>
           </Avatar>
         </div>
       </div>

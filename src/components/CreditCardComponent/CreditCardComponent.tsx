@@ -6,6 +6,16 @@ const CardIcons = {
   VisaCardIcon: Icons.VisaCardIcon,
 };
 
+type CardIconKeys = keyof typeof CardIcons;
+
+export const getRandomCardIcon = (): CardIconKeys => {
+  const iconKeys = Object.keys(CardIcons) as CardIconKeys[];
+
+  const randomIndex = Math.floor(Math.random() * iconKeys.length);
+
+  return iconKeys[randomIndex];
+};
+
 export type CreditCardComponentProps = {
   balance: string;
   chipIcon: keyof typeof CardIcons;
@@ -35,6 +45,37 @@ export type CreditCardComponentProps = {
     | "fuchsia"
     | "pink"
     | "purple";
+};
+
+export const cardStyles: CreditCardComponentProps["cardStyle"][] = [
+  "slate",
+  "gray",
+  "zinc",
+  "neutral",
+  "stone",
+  "red",
+  "orange",
+  "amber",
+  "yellow",
+  "lime",
+  "green",
+  "emerald",
+  "teal",
+  "cyan",
+  "sky",
+  "blue",
+  "indigo",
+  "violet",
+  "purple",
+  "fuchsia",
+  "pink",
+  "purple",
+];
+
+export const getRandomCardStyle = (): CreditCardComponentProps["cardStyle"] => {
+  const randomIndex = Math.floor(Math.random() * cardStyles.length);
+
+  return cardStyles[randomIndex];
 };
 
 export const CreditCardComponent = ({
