@@ -58,10 +58,10 @@ export const Header = () => {
           </div>
           <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
             <AvatarImage
-              src="https://github.com/shadcn.png"
+              src="https://avatars.githubusercontent.com/u/106037619?v=4"
               alt="avatar image"
             />
-            <AvatarFallback>MA</AvatarFallback>
+            <AvatarFallback>FJ</AvatarFallback>
           </Avatar>
         </div>
       </div>

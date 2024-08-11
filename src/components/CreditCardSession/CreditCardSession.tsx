@@ -7,34 +7,42 @@ import Link from "next/link";
 
 const creditCards: CreditCardComponentProps[] = [
   {
-    balance: "$5,756",
+    balance: "$6,992.00",
+    chipIcon: "MasterCardIcon",
+    cardHolder: "Clifford McDermott",
+    validThru: "07/2033",
+    finalDigits: "6711",
+    cardStyle: "blue",
+  },
+  {
+    balance: "$7,825.00",
+    chipIcon: "MasterCardIcon",
+    cardHolder: "Clifford McDermott",
+    validThru: "04/2031",
+    finalDigits: "9811",
+    cardStyle: "green",
+  },
+  {
+    balance: "$2,798.00",
     chipIcon: "VisaCardIcon",
-    cardHolder: "Eddy CusumaCusu",
-    validThru: "12/22",
-    finalDigits: "1234",
+    cardHolder: "Clifford McDermott",
+    validThru: "12/2030",
+    finalDigits: "8107",
     cardStyle: "slate",
   },
   {
-    balance: "$5,756",
+    balance: "$8,317.00",
     chipIcon: "VisaCardIcon",
-    cardHolder: "Eddy CusumaCusu",
-    validThru: "12/22",
-    finalDigits: "1234",
-    cardStyle: "cyan",
-  },
-  {
-    balance: "$5,756",
-    chipIcon: "VisaCardIcon",
-    cardHolder: "Eddy CusumaCusu",
-    validThru: "12/22",
-    finalDigits: "1234",
-    cardStyle: "lime",
+    cardHolder: "Clifford McDermott",
+    validThru: "03/2029",
+    finalDigits: "3388",
+    cardStyle: "indigo",
   },
 ];
 
 export const CreditCardSession = () => {
   return (
-    <div className="flex w-full max-w-[420px] flex-col gap-4 text-[#343C6A]">
+    <div className="flex w-full max-w-full flex-col gap-4 text-[#343C6A] lg:max-w-[50%]">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold">My Cards</h2>
         <Link href="/credit-cards" className="text-base font-semibold">
