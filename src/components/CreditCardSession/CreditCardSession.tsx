@@ -9,7 +9,7 @@ const creditCards: CreditCardComponentProps[] = [
   {
     balance: "$6,992.00",
     chipIcon: "MasterCardIcon",
-    cardHolder: "Clifford McDermott",
+    cardHolder: "Flávio Jerônimo da Silva Filho",
     validThru: "07/2033",
     finalDigits: "6711",
     cardStyle: "blue",
@@ -17,7 +17,7 @@ const creditCards: CreditCardComponentProps[] = [
   {
     balance: "$7,825.00",
     chipIcon: "MasterCardIcon",
-    cardHolder: "Clifford McDermott",
+    cardHolder: "Flávio Jerônimo da Silva Filho",
     validThru: "04/2031",
     finalDigits: "9811",
     cardStyle: "green",
@@ -25,7 +25,7 @@ const creditCards: CreditCardComponentProps[] = [
   {
     balance: "$2,798.00",
     chipIcon: "VisaCardIcon",
-    cardHolder: "Clifford McDermott",
+    cardHolder: "Flávio Jerônimo da Silva Filho",
     validThru: "12/2030",
     finalDigits: "8107",
     cardStyle: "slate",
@@ -33,7 +33,7 @@ const creditCards: CreditCardComponentProps[] = [
   {
     balance: "$8,317.00",
     chipIcon: "VisaCardIcon",
-    cardHolder: "Clifford McDermott",
+    cardHolder: "Flávio Jerônimo da Silva Filho",
     validThru: "03/2029",
     finalDigits: "3388",
     cardStyle: "indigo",
