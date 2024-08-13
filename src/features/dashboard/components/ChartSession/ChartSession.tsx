@@ -1,7 +1,7 @@
 export type ChartSessionProps = {
   title: string;
   children: React.ReactNode;
-  labels: { text: string; labelColor: string }[];
+  labels?: { text: string; labelColor: string }[];
 };
 
 export const ChartSession = ({
@@ -14,7 +14,7 @@ export const ChartSession = ({
       <h3 className="text-xl font-bold text-[#343C6A]">{title}</h3>
       <div className="flex h-full w-full flex-col gap-5 rounded-3xl bg-white p-7">
         <div className="flex w-full justify-end gap-3">
-          {labels.map((label) => (
+          {labels?.map((label) => (
             <div
               key={label.text}
               className="flex items-center justify-center gap-3"
@@ -27,7 +27,9 @@ export const ChartSession = ({
             </div>
           ))}
         </div>
-        {children}
+        <div className="flex h-full w-full items-center justify-center">
+          {children}
+        </div>
       </div>
     </div>
   );

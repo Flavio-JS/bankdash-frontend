@@ -30,7 +30,6 @@ const ChartTooltipContent = React.forwardRef<
       label,
       labelFormatter,
       labelClassName,
-      // formatter,
       nameKey,
       labelKey,
     },

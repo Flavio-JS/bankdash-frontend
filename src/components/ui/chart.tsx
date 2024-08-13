@@ -173,6 +173,10 @@ function getPayloadConfigFromPayload(
     configLabelKey = payloadPayload[
       key as keyof typeof payloadPayload
     ] as string;
+  } else if (
+    Object.values(config).some((item) => item.label === configLabelKey)
+  ) {
+    return Object.values(config).find((item) => item.label === configLabelKey);
   }
 
   return configLabelKey in config ? config[configLabelKey] : config[key];
