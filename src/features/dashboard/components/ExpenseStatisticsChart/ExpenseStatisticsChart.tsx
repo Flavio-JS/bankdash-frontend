@@ -5,6 +5,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chartTooltip";
+import { useWindowWidth } from "@/utils/useWindowWidth";
+import { useState } from "react";
 import { Cell, Pie, PieChart } from "recharts";
 
 const RADIAN = Math.PI / 180;
@@ -47,18 +49,22 @@ const chartConfig = {
   data1: {
     label: "Entertainment",
     color: "#343C6A",
+    formatTooltipValue,
   },
   data2: {
     label: "Bill Expense",
     color: "#FC7900",
+    formatTooltipValue,
   },
   data3: {
     label: "Others",
     color: "#1814F3",
+    formatTooltipValue,
   },
   data4: {
     label: "Investment",
     color: "#FA00FF",
+    formatTooltipValue,
   },
 } satisfies ChartConfig;
 
@@ -66,36 +72,39 @@ const chartData = [
   {
     name: "Entertainment",
     value: 30,
-    color: "#343C6A",
-    formatTooltipValue,
   },
   {
     name: "Bill Expense",
     value: 15,
-    color: "#FC7900",
-    formatTooltipValue,
   },
   {
     name: "Others",
     value: 35,
-    color: "#1814F3",
-    formatTooltipValue,
   },
   {
     name: "Investment",
     value: 20,
-    color: "#FA00FF",
-    formatTooltipValue,
   },
 ];
 
 export const ExpenseStatisticsChart = () => {
+  const whidth = useWindowWidth();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   const gradients = [
     "url(#data1Gradient)",
     "url(#data2Gradient)",
     "url(#data3Gradient)",
     "url(#data4Gradient)",
   ];
+
+  const onPieEnter = (_: unknown, index: number) => {
+    setActiveIndex(index);
+  };
+
+  const onPieLeave = () => {
+    setActiveIndex(null);
+  };
 
   return (
     <ChartContainer
@@ -121,17 +130,23 @@ export const ExpenseStatisticsChart = () => {
             <stop offset="100%" stopColor="#FA00FF" />
           </linearGradient>
         </defs>
-        <ChartTooltip content={<ChartTooltipContent />} />
+        {whidth < 1024 && <ChartTooltip content={<ChartTooltipContent />} />}
         <Pie
           data={chartData}
           strokeWidth={10}
           stroke="white"
           dataKey="value"
           labelLine={false}
-          label={renderCustomizedLabel}
+          label={whidth >= 1024 && renderCustomizedLabel}
+          onMouseLeave={onPieLeave}
         >
           {chartData.map((_, index) => (
-            <Cell key={`cell-${index}`} fill={gradients[index]} />
+            <Cell
+              key={`cell-${index}`}
+              fill={gradients[index]}
+              onMouseEnter={(event) => onPieEnter(event, index)}
+              fillOpacity={activeIndex === index ? 0.9 : 1}
+            />
           ))}
         </Pie>
       </PieChart>
