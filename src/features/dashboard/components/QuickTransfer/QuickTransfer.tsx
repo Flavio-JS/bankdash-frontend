@@ -11,14 +11,17 @@ import { Search } from "lucide-react";
 const avatarData = [
   {
     name: "Jemi Wilson1",
+    surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
     name: "Jemi Wilson2",
+    surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
     name: "Jemi Wilson3",
+    surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
 ];
@@ -36,8 +39,8 @@ export const QuickTransfer = () => {
                 <AvatarFallback>FJ</AvatarFallback>
               </Avatar>
               <div className="flex flex-col items-center">
-                <span className="text-xs">{data.name}</span>
-                <span className="text-xs text-[#718EBF]">CEO</span>
+                <span className="text-center text-xs">{data.name}</span>
+                <span className="text-xs text-[#718EBF]">{data.surname}</span>
               </div>
             </div>
           ))}
@@ -75,7 +78,7 @@ export const QuickTransfer = () => {
               inputMode="numeric"
               pattern="[0-9]*"
             />
-            <button className="flex items-center justify-center rounded-full bg-[#1814F3] px-5 py-3 text-white">
+            <button className="flex items-center justify-center gap-2 rounded-full bg-[#1814F3] px-5 py-3 text-white">
               <span>Send</span>
               <Icons.SendIcon />
             </button>
