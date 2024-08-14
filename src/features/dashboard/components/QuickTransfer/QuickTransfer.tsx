@@ -1,49 +1,97 @@
+"use client";
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import {
   Popover,
+  PopoverCloseTrigger,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Icons } from "@/features/dashboard/components/Icons/Icons";
+import { AmountInput } from "@/features/dashboard/components/QuickTransfer/AmountInput";
+import { faker } from "@faker-js/faker";
 import { Search } from "lucide-react";
+import { useState } from "react";
 
 const avatarData = [
   {
-    name: "Jemi Wilson1",
+    name: faker.person.firstName("male"),
     surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: "Jemi Wilson2",
+    name: faker.person.firstName("male"),
     surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: "Jemi Wilson3",
+    name: faker.person.firstName("male"),
+    surname: "Designer",
+    image: "https://avatars.githubusercontent.com/u/106037619?v=4",
+  },
+  {
+    name: faker.person.firstName("male"),
+    surname: "CEO",
+    image: "https://avatars.githubusercontent.com/u/106037619?v=4",
+  },
+  {
+    name: faker.person.firstName("male"),
+    surname: "Director",
+    image: "https://avatars.githubusercontent.com/u/106037619?v=4",
+  },
+  {
+    name: faker.person.firstName("male"),
     surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
 ];
 
 export const QuickTransfer = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [filteredAvatars, setFilteredAvatars] = useState(
+    avatarData.slice(0, 3)
+  );
+
+  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleFilterSubmit = () => {
+    const filtered = avatarData
+      .filter(
+        (data) =>
+          data.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+          data.surname.toLowerCase().includes(inputValue.toLowerCase())
+      )
+      .slice(0, 3);
+    setFilteredAvatars(filtered);
+  };
+
   return (
     <div className="flex flex-col items-start gap-5">
       <h2 className="text-2xl font-semibold text-[#343C6A]">QuickTransfer</h2>
       <div className="flex flex-col gap-6 rounded-3xl bg-white p-6">
-        <div className="flex items-center justify-center gap-4">
-          {avatarData.map((data) => (
-            <div key={data.name} className="flex flex-col items-center gap-3">
-              <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
-                <AvatarImage src={data.image} alt="avatar image" />
-                <AvatarFallback>FJ</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col items-center">
-                <span className="text-center text-xs">{data.name}</span>
-                <span className="text-xs text-[#718EBF]">{data.surname}</span>
+        <div className="flex items-center justify-between gap-4">
+          {filteredAvatars.length > 0 ? (
+            filteredAvatars.map((data) => (
+              <div key={data.name} className="flex flex-col items-center gap-3">
+                <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
+                  <AvatarImage src={data.image} alt="avatar image" />
+                  <AvatarFallback>FJ</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col items-center">
+                  <span className="max-w-[77px] truncate text-center text-xs">
+                    {data.name}
+                  </span>
+                  <span className="text-xs text-[#718EBF]">{data.surname}</span>
+                </div>
               </div>
+            ))
+          ) : (
+            <div className="flex w-full items-center justify-center">
+              <span>Not Found</span>
             </div>
-          ))}
+          )}
 
           <Popover>
             <PopoverTrigger>
@@ -56,34 +104,22 @@ export const QuickTransfer = () => {
                 <div className="flex w-full max-w-sm items-center space-x-2">
                   <Input
                     className="focus:border-[#1814F3] focus-visible:ring-transparent"
-                    type="name"
+                    type="text"
                     placeholder="Name"
+                    value={inputValue}
+                    onChange={handleFilterChange}
                   />
-                  <button type="submit">
-                    <Search />
-                  </button>
+                  <PopoverCloseTrigger aria-label="Close">
+                    <button type="button" onClick={handleFilterSubmit}>
+                      <Search />
+                    </button>
+                  </PopoverCloseTrigger>
                 </div>
               </div>
             </PopoverContent>
           </Popover>
         </div>
-        <div className="flex items-center justify-between gap-5">
-          <span className="text-[#718EBF]">Write Amount</span>
-          <div className="flex w-max items-center justify-between gap-3 rounded-full bg-[#EDF1F7] pl-4">
-            <input
-              className="w-12 bg-transparent text-[#718EBF] focus-visible:outline-none"
-              type="text"
-              name="text"
-              id="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
-            />
-            <button className="flex items-center justify-center gap-2 rounded-full bg-[#1814F3] px-5 py-3 text-white">
-              <span>Send</span>
-              <Icons.SendIcon />
-            </button>
-          </div>
-        </div>
+        <AmountInput />
       </div>
     </div>
   );
