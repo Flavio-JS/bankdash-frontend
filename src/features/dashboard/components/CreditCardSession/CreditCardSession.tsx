@@ -42,14 +42,14 @@ const creditCards: CreditCardComponentProps[] = [
 
 export const CreditCardSession = () => {
   return (
-    <div className="flex w-full max-w-full flex-col gap-4 text-[#343C6A] lg:max-w-[50%]">
+    <div className="flex w-full max-w-full flex-col gap-5 text-[#343C6A] lg:max-w-[50%]">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold">My Cards</h2>
         <Link href="/credit-cards" className="text-base font-semibold">
           See All
         </Link>
       </div>
-      <ScrollArea className="w-full whitespace-nowrap rounded-md">
+      <ScrollArea className="flex w-full items-center whitespace-nowrap rounded-md py-6">
         <div className="mb-3 flex gap-6">
           {creditCards.map((creditCard) => (
             <CreditCardComponent key={creditCard.cardStyle} {...creditCard} />

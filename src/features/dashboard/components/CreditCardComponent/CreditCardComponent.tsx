@@ -1,5 +1,8 @@
+"use client";
+
 import { Icons } from "@/features/dashboard/components/Icons/Icons";
 import { cn } from "@/lib/utils";
+import { useWindowWidth } from "@/utils/useWindowWidth";
 
 const CardIcons = {
   MasterCardIcon: Icons.MasterCardIcon,
@@ -86,6 +89,8 @@ export const CreditCardComponent = ({
   finalDigits,
   cardStyle,
 }: CreditCardComponentProps) => {
+  const width = useWindowWidth();
+
   const CardFlag = CardIcons[chipIcon];
 
   const getMainStyle = () => {
@@ -140,29 +145,33 @@ export const CreditCardComponent = ({
   return (
     <div
       className={cn(
-        "flex h-[170px] w-[231px] flex-col justify-between rounded-2xl bg-gradient-to-tl text-white",
+        "flex h-full w-full flex-col justify-between rounded-2xl bg-gradient-to-tl text-white lg:h-[235px] lg:w-[350px]",
         getMainStyle()
       )}
     >
-      <div className="flex h-full flex-col justify-between p-4">
+      <div className="flex h-full flex-col justify-between p-4 lg:p-6">
         <div className="flex justify-between">
           <div className="flex flex-col">
-            <span className="text-xs">Balance</span>
-            <span className="text-base">{balance}</span>
+            <span className="text-xs lg:text-sm">Balance</span>
+            <span className="text-base lg:text-xl">{balance}</span>
           </div>
           <Icons.ChipCardIcon fill="black" />
         </div>
         <div className="flex justify-start gap-7">
           <div className="flex flex-col">
-            <span className="text-[10px] opacity-70">CARD HOLDER</span>
+            <span className="text-[10px] opacity-70 lg:text-sm">
+              CARD HOLDER
+            </span>
 
-            <span className="max-w-[108px] overflow-hidden truncate text-xs">
+            <span className="max-w-[108px] overflow-hidden truncate text-xs lg:text-base">
               {cardHolder}
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] opacity-70">VALID THRU</span>
-            <span className="text-xs">{validThru}</span>
+            <span className="text-[10px] opacity-70 lg:text-sm">
+              VALID THRU
+            </span>
+            <span className="text-xs lg:text-base">{validThru}</span>
           </div>
         </div>
       </div>
@@ -171,8 +180,11 @@ export const CreditCardComponent = ({
           "flex justify-between rounded-b-2xl bg-gradient-to-t p-4"
         )}
       >
-        <span>**** **** **** {finalDigits}</span>
-        <CardFlag />
+        <span className="lg:text-xl">**** **** **** {finalDigits}</span>
+        <CardFlag
+          width={width >= 1024 ? 40 : undefined}
+          height={width >= 1024 ? 40 : undefined}
+        />
       </div>
     </div>
   );

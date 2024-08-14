@@ -9,37 +9,36 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AmountInput } from "@/features/dashboard/components/QuickTransfer/AmountInput";
-import { faker } from "@faker-js/faker";
 import { useState } from "react";
 
 const avatarData = [
   {
-    name: faker.person.firstName("male"),
+    name: "Pedro",
     surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Dewey",
     surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Roosevelt",
     surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Douglas",
     surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Harry",
     surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Darrell",
     surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
