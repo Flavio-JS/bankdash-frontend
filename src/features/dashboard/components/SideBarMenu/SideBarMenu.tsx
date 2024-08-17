@@ -6,7 +6,7 @@ export function SideBarMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="flex items-center gap-2">
+        <button className="flex items-center gap-2" aria-label="menu">
           <MenuIcon />
         </button>
       </SheetTrigger>

@@ -1,18 +1,30 @@
+import { cn } from "@/lib/utils";
+
 export type ChartSessionProps = {
   title: string;
   children: React.ReactNode;
   labels?: { text: string; labelColor: string }[];
+  chartType?: "line" | "bar" | "pie" | "donut";
+  className?: string;
 };
 
 export const ChartSession = ({
   title,
   children,
   labels,
+  className,
+  chartType,
 }: ChartSessionProps) => {
   return (
-    <div className="flex w-full flex-col gap-4">
-      <h3 className="text-xl font-bold text-[#343C6A]">{title}</h3>
-      <div className="flex h-full w-full flex-col gap-5 rounded-3xl bg-white p-7">
+    <div className={cn("flex w-full flex-col gap-4", className)}>
+      <h3 className="text-xl font-bold text-[#343C6A] lg:text-2xl">{title}</h3>
+      <div
+        className={cn(
+          // "flex h-full w-full flex-col gap-5 rounded-3xl bg-white",
+          "flex h-[calc(100%-44px)] w-full flex-col gap-5 rounded-3xl bg-white",
+          chartType !== "donut" && "p-7"
+        )}
+      >
         <div className="flex w-full justify-end gap-3">
           {labels?.map((label) => (
             <div

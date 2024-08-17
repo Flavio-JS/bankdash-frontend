@@ -79,6 +79,10 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #555;
     }
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   body {

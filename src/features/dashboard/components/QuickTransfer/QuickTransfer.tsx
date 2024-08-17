@@ -9,37 +9,36 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { AmountInput } from "@/features/dashboard/components/QuickTransfer/AmountInput";
-import { faker } from "@faker-js/faker";
 import { useState } from "react";
 
 const avatarData = [
   {
-    name: faker.person.firstName("male"),
+    name: "Pedro",
     surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Dewey",
     surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Roosevelt",
     surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Douglas",
     surname: "CEO",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Harry",
     surname: "Director",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
   {
-    name: faker.person.firstName("male"),
+    name: "Darrell",
     surname: "Designer",
     image: "https://avatars.githubusercontent.com/u/106037619?v=4",
   },
@@ -53,14 +52,15 @@ export const QuickTransfer = () => {
   };
 
   return (
-    <div className="flex flex-col items-start gap-5">
+    <div className="flex h-full w-full flex-col items-start gap-4 lg:max-w-[416px]">
       <h2 className="text-2xl font-semibold text-[#343C6A]">QuickTransfer</h2>
-      <div className="flex flex-col gap-6 rounded-3xl bg-white p-6">
+      <div className="flex h-full flex-col justify-center gap-6 rounded-3xl bg-white p-6">
         <div className="flex w-full justify-center">
           <div className="w-[70%]">
             <Carousel
               opts={{
                 align: "start",
+                loop: true,
               }}
               className=""
             >
@@ -72,7 +72,7 @@ export const QuickTransfer = () => {
                       className="flex cursor-pointer flex-col items-center gap-3"
                       onClick={() => handleAvatarClick(data.name)}
                     >
-                      <Avatar className="h-9 w-9 lg:h-16 lg:w-16">
+                      <Avatar className="h-9 w-9 md:h-16 md:w-16">
                         <AvatarImage src={data.image} alt="avatar image" />
                         <AvatarFallback>FJ</AvatarFallback>
                       </Avatar>
