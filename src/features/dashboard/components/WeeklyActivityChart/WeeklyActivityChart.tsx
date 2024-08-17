@@ -5,6 +5,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chartTooltip";
+import { useWindowWidth } from "@/utils/useWindowWidth";
 import { Bar, CartesianGrid, ComposedChart, XAxis, YAxis } from "recharts";
 
 const formatTooltipValue = (value: number) => {
@@ -66,6 +67,7 @@ const chartData = [
 ];
 
 export const WeeklyActivityChart = () => {
+  const width = useWindowWidth();
   return (
     <ChartContainer
       config={chartConfig}
@@ -103,14 +105,14 @@ export const WeeklyActivityChart = () => {
           dataKey="Withdraw"
           fill="url(#WithdrawGradient)"
           radius={30}
-          barSize={15}
+          barSize={width >= 1024 ? 15 : 7.5}
         />
         <Bar
           yAxisId="yL"
           dataKey="Diposit"
           fill="url(#DipositGradient)"
           radius={30}
-          barSize={15}
+          barSize={width >= 1024 ? 15 : 7.5}
         />
       </ComposedChart>
     </ChartContainer>

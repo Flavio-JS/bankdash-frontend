@@ -42,7 +42,7 @@ const creditCards: CreditCardComponentProps[] = [
 
 export const CreditCardSession = () => {
   return (
-    <div className="flex w-full max-w-full flex-col gap-5 text-[#343C6A] lg:max-w-[50%]">
+    <div className="flex w-full max-w-full flex-col gap-5 text-[#343C6A] lg:max-w-[45%] xl:max-w-[60%]">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold">My Cards</h2>
         <Link href="/credit-cards" className="text-base font-semibold">

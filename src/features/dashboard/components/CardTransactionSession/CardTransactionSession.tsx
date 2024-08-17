@@ -26,11 +26,11 @@ const transactions: CardTransactionProps[] = [
 
 export const CardTransactionSession = () => {
   return (
-    <div className="flex flex-col items-start gap-5">
+    <div className="flex w-full flex-col items-start gap-5 lg:max-w-[55%] xl:max-w-[40%]">
       <h2 className="text-2xl font-semibold text-[#343C6A]">
         Recent Transaction
       </h2>
-      <div className="rounded-3xl bg-white p-6">
+      <div className="w-full rounded-3xl bg-white p-6">
         {transactions.map((transaction) => (
           <CardTransaction
             key={transaction.title}
